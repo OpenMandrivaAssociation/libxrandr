@@ -56,8 +56,8 @@ fi
 %{_libdir}/libXrandr.la
 %{_libdir}/pkgconfig/xrandr.pc
 %{_includedir}/X11/extensions/Xrandr.h
-%{_mandir}/man3/XRR*.3*.bz2
-%{_mandir}/man3/Xrandr.3*.bz2
+%{_mandir}/man3/XRR*.3*
+%{_mandir}/man3/Xrandr.3*
 
 #-----------------------------------------------------------
 
