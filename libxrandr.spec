@@ -1,19 +1,18 @@
 %define libxrandr %mklibname xrandr 2
 Name: libxrandr
 Summary:  X RandR Library
-Version: 1.2.99.4
-Release: %mkrel 2
+Version: 1.3.0
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
 Source0: http://xorg.freedesktop.org/releases/individual/lib/libXrandr-%{version}.tar.bz2
-Patch1: 0001-Send-X_RRGetOutputPrimary-when-making.patch
 BuildRoot: %{_tmppath}/%{name}-root
 
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxext-devel >= 1.0.0
 BuildRequires: libxrender-devel >= 0.9.0.2
-BuildRequires: x11-proto-devel >= 1.2.0-10mdv2007.1
+BuildRequires: x11-proto-devel >= 7.4-16mdv2009.1
 BuildRequires: x11-util-macros >= 1.0.1
 
 %description
@@ -80,7 +79,6 @@ Static development files for %{name}
 
 %prep
 %setup -q -n libXrandr-%{version}
-%patch1 -p1
 
 %build
 %configure2_5x	--x-includes=%{_includedir}\
