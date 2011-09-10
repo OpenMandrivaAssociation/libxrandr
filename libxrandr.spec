@@ -1,8 +1,8 @@
 %define libxrandr %mklibname xrandr 2
 Name: libxrandr
 Summary:  X RandR Library
-Version: 1.3.1
-Release: %mkrel 3
+Version: 1.3.2
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
