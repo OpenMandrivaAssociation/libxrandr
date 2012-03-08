@@ -5,7 +5,7 @@
 Name: libxrandr
 Summary:  X RandR Library
 Version: 1.3.2
-Release: 2
+Release: 3
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -55,11 +55,6 @@ Development files for %{name}
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-%pre -n %{develname}
-if [ -h %{_includedir}/X11 ]; then
-	rm -f %{_includedir}/X11
-fi
 
 %files -n %{libxrandr}
 %{_libdir}/libXrandr.so.%{major}*
