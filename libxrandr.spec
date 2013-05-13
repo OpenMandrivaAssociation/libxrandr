@@ -10,9 +10,9 @@ Group:		Development/X11
 License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXrandr-%{version}.tar.bz2
-BuildRequires:	libx11-devel >= 1.0.0
-BuildRequires:	libxext-devel >= 1.0.0
-BuildRequires:	libxrender-devel >= 0.9.0.2
+BuildRequires:	pkgconfig(x11) >= 1.0.0
+BuildRequires:	pkgconfig(xext) >= 1.0.0
+BuildRequires:	pkgconfig(xrender) >= 0.9.0.2
 BuildRequires:	x11-proto-devel >= 7.4-16mdv2009.1
 BuildRequires:	x11-util-macros >= 1.0.1
 
