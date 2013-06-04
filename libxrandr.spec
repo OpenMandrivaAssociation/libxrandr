@@ -4,8 +4,8 @@
 
 Name:		libxrandr
 Summary:	X RandR Library
-Version:	1.4.0
-Release:	2
+Version:	1.4.1
+Release:	1
 Group:		Development/X11
 License:	MIT
 URL:		http://xorg.freedesktop.org
@@ -20,7 +20,7 @@ BuildRequires:	x11-util-macros >= 1.0.1
 X RandR Library.
 
 %package -n %{libxrandr}
-Summary: 	X RandR Library
+Summary:	X RandR Library
 Group:		Development/X11
 Conflicts:	libxorg-x11 < 7.0
 Provides:	%{name} = %{version}-%{release}
@@ -44,7 +44,6 @@ Development files for %{name}.
 %setup -qn libXrandr-%{version}
 
 %build
-autoreconf -fi
 %configure2_5x \
 	--disable-static \
 	--x-includes=%{_includedir} \
