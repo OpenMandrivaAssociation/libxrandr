@@ -4,8 +4,8 @@
 
 Summary:	X RandR Library
 Name:		libxrandr
-Version:	1.4.2
-Release:	8
+Version:	1.5.0
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -40,7 +40,7 @@ Development files for %{name}.
 %setup -qn libXrandr-%{version}
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir}
@@ -59,4 +59,3 @@ Development files for %{name}.
 %{_includedir}/X11/extensions/Xrandr.h
 %{_mandir}/man3/XRR*.3*
 %{_mandir}/man3/Xrandr.3*
-
