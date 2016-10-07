@@ -4,8 +4,8 @@
 
 Summary:	X RandR Library
 Name:		libxrandr
-Version:	1.5.0
-Release:	4
+Version:	1.5.1
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
