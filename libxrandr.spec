@@ -13,12 +13,17 @@
 %define dev32name libxrandr-devel
 %endif
 
+# 32-bit gcc LTO is broken (leads to unresolved
+# symbols when building wine), but no harm done
+# because we manually add -flto for the 64-bit
+# build
+%global _disable_lto 1
 %global optflags %{optflags} -O3
 
 Summary:	X RandR Library
 Name:		libxrandr
 Version:	1.5.2
-Release:	3
+Release:	4
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -81,7 +86,7 @@ cd ..
 %endif
 mkdir build
 cd build
-%configure
+CFLAGS="%{optflags} -flto" LDFLAGS="%{ldflags} -flto" %configure
 
 %build
 %if %{with compat32}
