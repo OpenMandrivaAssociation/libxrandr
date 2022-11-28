@@ -22,18 +22,19 @@
 
 Summary:	X RandR Library
 Name:		libxrandr
-Version:	1.5.2
-Release:	4
+Version:	1.5.3
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXrandr-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXrandr-%{version}.tar.xz
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xext) >= 1.0.0
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
 BuildRequires:	pkgconfig(xrender) >= 0.9.0.2
 %if %{with compat32}
+BuildRequires:	libc6
 BuildRequires:	devel(libX11)
 BuildRequires:	devel(libXext)
 BuildRequires:	devel(libXrender)
@@ -80,7 +81,7 @@ Development files for %{name}.
 
 %prep
 %autosetup -n libXrandr-%{version} -p1
-export CONFIGURE_TOP="`pwd`"
+export CONFIGURE_TOP="$(pwd)"
 %if %{with compat32}
 mkdir build32
 cd build32
@@ -89,7 +90,7 @@ cd ..
 %endif
 mkdir build
 cd build
-CFLAGS="%{optflags} -flto" LDFLAGS="%{ldflags} -flto" %configure
+CFLAGS="%{optflags} -flto" LDFLAGS="%{build_ldflags} -flto" %configure
 
 %build
 %if %{with compat32}
@@ -110,8 +111,8 @@ CFLAGS="%{optflags} -flto" LDFLAGS="%{ldflags} -flto" %configure
 %{_libdir}/libXrandr.so
 %{_libdir}/pkgconfig/xrandr.pc
 %{_includedir}/X11/extensions/Xrandr.h
-%{_mandir}/man3/XRR*.3*
-%{_mandir}/man3/Xrandr.3*
+%doc %{_mandir}/man3/XRR*.3*
+%doc %{_mandir}/man3/Xrandr.3*
 
 %if %{with compat32}
 %files -n %{lib32name}
