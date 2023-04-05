@@ -90,7 +90,10 @@ cd ..
 %endif
 mkdir build
 cd build
-CFLAGS="%{optflags} -flto" LDFLAGS="%{build_ldflags} -flto" %configure
+CFLAGS="%{optflags} -flto" LDFLAGS="%{build_ldflags} -flto" %configure \
+%if %{cross_compiling}
+	--disable-malloc0returnsnull
+%endif
 
 %build
 %if %{with compat32}
