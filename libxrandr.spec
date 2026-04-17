@@ -22,7 +22,7 @@
 
 Summary:	X RandR Library
 Name:		libxrandr
-Version:	1.5.4
+Version:	1.5.5
 Release:	1
 Group:		Development/X11
 License:	MIT
